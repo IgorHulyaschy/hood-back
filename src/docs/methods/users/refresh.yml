@@ -1,0 +1,27 @@
+get:
+  summary: Refresh token
+  description: Refresh old token to a new one
+  tags:
+    - Users
+  security:
+    - ApiKeyAuth: []
+  responses:
+    "200":
+      content:
+        application/json:
+          description: New Tokens
+          schema:
+            type: object
+            properties:
+              accessToken: 
+                type: string
+              accessTokenExpirationDate: 
+                type: number
+              refreshToken: 
+                type: string
+              refreshTokenExpirationDate:
+                type: number
+    404 :
+      $ref: "../../errors/404.error.yml"
+    default:
+      $ref: "../../errors/error.yml"

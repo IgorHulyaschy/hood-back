@@ -1,0 +1,52 @@
+{
+  "name": "koa-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "build-css": "node-sass --output ./src/public/stylesheets  ./src/scss",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint:init": "eslint --init",
+    "serve": "nodemon ./app.js",
+    "start": "node ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorHulyaschy/koa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgorHulyaschy/koa/issues"
+  },
+  "homepage": "https://github.com/IgorHulyaschy/koa#readme",
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "aws-sdk": "^2.899.0",
+    "config": "^3.3.6",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "file-type": "^16.3.0",
+    "joi": "^17.4.0",
+    "jwt-simple": "^0.5.6",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-joi-router": "^7.0.0",
+    "koa-passport": "^4.1.4",
+    "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0",
+    "koa2-swagger-ui": "^5.1.0",
+    "local": "^0.3.3",
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}

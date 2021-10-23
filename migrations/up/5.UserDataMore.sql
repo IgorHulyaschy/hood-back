@@ -1,0 +1,6 @@
+START TRANSACTION;
+  ALTER TABLE "users_data" ADD "phone" CHARACTER VARYING;
+  ALTER TABLE "users_data" ADD "country" CHARACTER VARYING;
+  ALTER TABLE "users_data" ADD "stack" CHARACTER VARYING;
+  ALTER TABLE "users_data" ADD  COLUMN rate int DEFAULT 0;
+COMMIT;

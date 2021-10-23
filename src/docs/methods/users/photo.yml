@@ -1,0 +1,29 @@
+put:
+  summary: Update Photo
+  description: Update user's photo and return it url
+  tags:
+    - Users
+  security:
+    - ApiKeyAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            photo: 
+              type: string
+              description: code of photo base64
+  responses:
+    "200":
+      content:
+        application/json:
+          description: User object with JWT tokens
+          schema:
+            type: object
+            properties:
+              photoUrl:
+                type: string
+                description: url of photo
+    400:
+      $ref: '../../errors/400.error.yml'

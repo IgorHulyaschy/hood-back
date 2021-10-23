@@ -1,0 +1,36 @@
+openapi: 3.0.0
+info:
+  title: Hood
+  description: Made in China
+  version: 0.0.1
+  host: 
+  schemes:
+  - http
+  - https
+tags:
+  - name: Users
+paths:
+  /logIn:
+    $ref: methods/users/logIn.yml
+  /profileAuth:
+    $ref: methods/users/profileAuth.yml
+  /createUser:
+    $ref: methods/users/signUp.yml
+  /refresh:
+    $ref: methods/users/refresh.yml
+  /list:
+    $ref: methods/users/listUsers.yml
+  /updateCategory:
+    $ref: methods/users/updateCategory.yml
+  /deleteUser/{userId}:
+    $ref: methods/users/deleteUser.yml
+  /photo:
+    $ref: methods/users/photo.yml
+servers:
+  - url: /
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization

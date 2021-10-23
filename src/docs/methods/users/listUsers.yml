@@ -1,0 +1,40 @@
+get:
+  summary: List of users
+  description: Return all of users if this user is authorizated
+  tags:
+    - Users
+  security:
+    - ApiKeyAuth: []
+  responses:
+    "200":
+      content:
+        application/json:
+          description: User object
+          schema:
+            type: object
+            properties:
+              users:
+                type: object
+                properties:
+                  fname:
+                    type: string
+                    description: First name of user
+                  lname:
+                    type: string
+                    description: Last name of user
+                  login:
+                    type: string
+                    description: Username
+                  email:
+                    type: string
+                    description: Email of user
+                  photo:
+                    type: string
+                    description: User photo
+                  categoryId:
+                    type: number
+                    description: category that this user choose
+    404 :
+      $ref: "../../errors/404.error.yml"
+    default:
+      $ref: "../../errors/error.yml"

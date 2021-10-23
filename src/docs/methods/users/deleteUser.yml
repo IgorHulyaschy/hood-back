@@ -1,0 +1,13 @@
+delete:
+  summary: Delete User
+  description: Delete user by his ID
+  tags: 
+    - Users
+  parameters:
+    - in: path
+      name: userId
+      required: true
+      schema:
+        type: number
+        minimum: 1
+      description: The user's id

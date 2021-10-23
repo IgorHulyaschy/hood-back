@@ -1,0 +1,60 @@
+post:
+  summary: Sign Up
+  description: Create new user user and return user object
+  tags:
+    - Users
+  security:
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            fname: 
+              type: string
+              description: user first name
+            lname:
+              type: string
+              description: user last name
+            login:
+              type: string
+              description: username
+            email:
+              type: string
+              description: user email
+            password:
+              type: string
+              description: user password
+  responses:
+    "201":
+      content:
+        application/json:
+          description: User object with JWT tokens
+          schema:
+            type: object
+            properties:
+              user:
+                type: object
+                properties:
+                  email:
+                    type: string
+                    description: Email of user
+                  fname:
+                    type: string
+                    description: First name of user
+                  lname:
+                    type: string
+                    description: Last name of user
+                  login:
+                    type: string
+                    description: username
+                  categoryId:
+                    type: number
+                    description: User category id
+                  photo:
+                    type: string
+                    description: user photo
+    404 :
+      $ref: "../../errors/404.error.yml"
+    400:
+      $ref: '../../errors/400.error.yml'

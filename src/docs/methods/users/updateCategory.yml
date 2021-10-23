@@ -1,0 +1,36 @@
+post:
+  summary: Update Category
+  description: update the category of user
+  tags:
+    - Users
+  security:
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            categoryid:
+              type: number
+              description: User category id
+            email:
+              type: string
+              description: user email
+  responses:
+    "200":
+      content:
+        application/json:
+          description: User object with JWT tokens
+          schema:
+            type: object
+            properties:
+              user:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: new category
+    404 :
+      $ref: "../../errors/404.error.yml"
+    400:
+      $ref: '../../errors/400.error.yml'

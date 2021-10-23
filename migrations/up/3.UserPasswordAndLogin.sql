@@ -1,0 +1,4 @@
+START TRANSACTION;
+  ALTER TABLE "users_data" ADD "password" CHARACTER VARYING NOT NULL;
+  ALTER TABLE "users_data" ADD CONSTRAINT user_email UNIQUE (email);
+COMMIT;

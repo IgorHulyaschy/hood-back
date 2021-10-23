@@ -1,0 +1,37 @@
+get:
+  summary: Profile
+  description: Sign in user and return user object with JWT tokens
+  tags:
+    - Users
+  security:
+    - ApiKeyAuth: []
+  responses:
+    "200":
+      content:
+        application/json:
+          description: User object
+          schema:
+            type: object
+            properties:
+              user:
+                type: object
+                properties:
+                  email:
+                    type: string
+                    description: Email of user
+                  photo:
+                    type: string
+                    description: User photo
+                  fname:
+                    type: string
+                    description: First name of user
+                  lname:
+                    type: string
+                    description: Last name of user
+                  login:
+                    type: string
+                    description: Username
+    404 :
+      $ref: "../../errors/404.error.yml"
+    default:
+      $ref: "../../errors/error.yml"

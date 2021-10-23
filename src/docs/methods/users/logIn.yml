@@ -1,0 +1,68 @@
+post:
+  summary: Sign In
+  description: Sign in user and return user object with JWT tokens
+  tags:
+    - Users
+  security:
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            email:
+              type: string
+              description: user email
+            password:
+              type: string
+              description: user password
+  responses:
+    "200":
+      content:
+        application/json:
+          description: User object with JWT tokens
+          schema:
+            type: object
+            properties:
+              user:
+                type: object
+                properties:
+                  email:
+                    type: string
+                    description: Email of user
+                  fname:
+                    type: string
+                    description: First name of user
+                  lname:
+                    type: string
+                    description: Last name of user
+                  login:
+                    type: string
+                    description: username
+                  categoryId:
+                    type: number
+                    description: User category id
+                  photo: 
+                    type: 
+                      - string
+                      - 'null'
+                    description: user photo
+                  tokens:
+                    type: object
+                    properties:
+                      accessToken:
+                        type: string
+                        description: User access token
+                      accessTokenExpirationDate:
+                        type: number
+                        description: User access token expiration timestamp
+                      refreshToken:
+                        type: string
+                        description: User refresh token
+                      refreshTokenExpirationDate:
+                        type: number
+                        description: User refresh token expiration timestamp
+    404 :
+      $ref: "../../errors/404.error.yml"
+    400:
+      $ref: '../../errors/400.error.yml'

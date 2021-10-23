@@ -1,0 +1,9 @@
+content: 
+  aplication/json: 
+    description: Message about user status
+    schema: 
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
